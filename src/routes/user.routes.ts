@@ -50,6 +50,11 @@ router.get("/call_back", async (req, res, next) => {
     await createUser(email, name);
 
     res.redirect(`scorder://open/tokens=${JSON.stringify(tokens)}`);
+
+    res.json({
+      status: "PASS",
+    })
+
   } catch (e) {
     console.log("⚡️[server]: exception occured in call_back :: ", e);
   }
